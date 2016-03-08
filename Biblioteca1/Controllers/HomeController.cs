@@ -32,7 +32,7 @@ namespace Biblioteca1.Controllers
             if (usuario.IsValid(usuario.email, usuario.senha))
             {
                 FormsAuthentication.SetAuthCookie(usuario.email, false);
-                return RedirectToAction("Index", "Emprestimoes");
+                return RedirectToAction("Index", "Emprestimos");
             }
             else
             {

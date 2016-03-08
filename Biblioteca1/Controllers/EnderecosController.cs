@@ -11,6 +11,7 @@ using Biblioteca1.Models;
 
 namespace Biblioteca1.Controllers
 {
+    [Authorize]
     public class EnderecosController : Controller
     {
         private ModelBiblioteca db = new ModelBiblioteca();

@@ -35,11 +35,26 @@ namespace Biblioteca1
 
         [DisplayName("Usuário")]
         [Required]
-        [StringLength(128)]
-        public string UsuarioID { get; set; }
+        public int UsuarioID { get; set; }
 
         public virtual Livro Livro { get; set; }
 
         public virtual StatusEmprestimo StatusEmprestimo { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
+
+        public void calcularMulta() {
+            int dias = 0;
+            if (DataDevolucao == null)
+            {
+                dias = DateTime.Now.Subtract(Convert.ToDateTime(Prazo.ToString())).Days;
+            }
+            else
+            {
+                dias = Convert.ToDateTime(DataDevolucao.ToString()).Subtract(Convert.ToDateTime(Prazo.ToString())).Days;
+            }
+
+            Multa = dias > 0 ? dias * 0.5 : 0;
+        }
     }
 }

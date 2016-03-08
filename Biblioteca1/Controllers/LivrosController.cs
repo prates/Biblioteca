@@ -10,6 +10,7 @@ using Biblioteca1;
 
 namespace Biblioteca1.Controllers
 {
+    [Authorize]
     public class LivrosController : Controller
     {
         private ModelBiblioteca db = new ModelBiblioteca();

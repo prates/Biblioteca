@@ -158,7 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EmprestimoesController.cs" />
+    <Compile Include="Controllers\EmprestimosController.cs" />
     <Compile Include="Controllers\EnderecosController.cs" />
     <Compile Include="Controllers\GenerosLivrosController.cs" />
     <Compile Include="Controllers\GenerosController.cs" />
@@ -240,11 +240,6 @@
     <Content Include="Views\Generos\Delete.cshtml" />
     <Content Include="Views\Generos\Edit.cshtml" />
     <Content Include="Views\Generos\Index.cshtml" />
-    <Content Include="Views\Emprestimoes\Create.cshtml" />
-    <Content Include="Views\Emprestimoes\Delete.cshtml" />
-    <Content Include="Views\Emprestimoes\Details.cshtml" />
-    <Content Include="Views\Emprestimoes\Edit.cshtml" />
-    <Content Include="Views\Emprestimoes\Index.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\GenerosLivros\Create.cshtml" />
     <Content Include="Views\Enderecos\Create.cshtml" />
@@ -252,6 +247,11 @@
     <Content Include="Views\Enderecos\Details.cshtml" />
     <Content Include="Views\Enderecos\Edit.cshtml" />
     <Content Include="Views\Enderecos\Index.cshtml" />
+    <Content Include="Views\Emprestimos\Create.cshtml" />
+    <Content Include="Views\Emprestimos\Delete.cshtml" />
+    <Content Include="Views\Emprestimos\Details.cshtml" />
+    <Content Include="Views\Emprestimos\Edit.cshtml" />
+    <Content Include="Views\Emprestimos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

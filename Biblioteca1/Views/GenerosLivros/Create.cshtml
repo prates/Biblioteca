@@ -5,18 +5,17 @@
 
     
 }
-
+@Scripts.Render("~/bundles/jquery")
 <h2>Adionar Genero a : @Html.DisplayFor(Model => Model.Livro.Titulo)</h2>
 
 @using (Html.BeginForm())
 {
-
+    @Html.AntiForgeryToken()
     <table class="table table-striped">
         <thead>
             <tr>
                 <td>Genero</td>
-                <td>Adicionar</td>
-                <td>Excluir</td>
+                <td></td>
             </tr>
         </thead>
         <tbody>
@@ -28,14 +27,8 @@
                 <td>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Adicionar" class="btn btn-primary" />
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Excluir" class="btn btn-primary" />
+                            <input type="button" value="Adicionar" class="btn btn-primary" onClick="adicionarGenero('@Html.DisplayFor(Model => Model.Livro.Id)','@Html.DisplayFor(modelItem => item.Id)')" />
+                            <input type="text" value="Excluir" class="btn btn-danger" onclick="iara();" />
                         </div>
                     </div>
                 </td>
@@ -57,5 +50,34 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-}
+    <script type="text/javascript">
 
+    $(function () {
+        alert('test');
+
+        function iara() {
+            alert("ddd");
+        }
+
+        function adicionarGenero(livroId, generoId) {
+            debugger;
+            $.ajax({
+                url: '/GenerosLivros/Create',
+                type: 'POST',
+                data: {
+                    livroId: livroId,
+                    generoId: generoId
+                },
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert(data.success);
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+
+    });
+</script>
+    }

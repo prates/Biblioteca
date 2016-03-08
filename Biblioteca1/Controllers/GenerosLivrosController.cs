@@ -11,6 +11,7 @@ using Biblioteca1.Helpers;
 
 namespace Biblioteca1.Controllers
 {
+    [Authorize]
     public class GenerosLivrosController : Controller
     {
         private ModelBiblioteca db = new ModelBiblioteca();
@@ -26,8 +27,15 @@ namespace Biblioteca1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LivroID, GeneroID")] GeneroLivro gl)
+        public ActionResult Create(int? livroId, int? generoId)
         {
+            Livro livro = db.Livro.Find(livroId);
+            Genero genero = db.Genero.Find(generoId);
+
+            GeneroLivro gl = new GeneroLivro();
+            gl.Livro = livro;
+            gl.Genero = genero;
+
             if (ModelState.IsValid)
             {
                 db.GeneroLivro.Add(gl);
