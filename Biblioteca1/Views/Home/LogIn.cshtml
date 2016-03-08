@@ -1,0 +1,33 @@
+﻿@model Biblioteca1.Usuario
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Usuário ou Senha incorretos");
+    <div>
+        <fieldset>
+            <legend>Logar na biblioteca online</legend>
+            <div class="editor-label">@Html.LabelFor(u => u.email)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.email)
+                @Html.ValidationMessageFor(u => u.email)
+        </div>
+        <div class="editor-label">@Html.LabelFor(u => u.senha)</div>
+        <div class="editor-field">
+            @Html.PasswordFor(u => u.senha)
+            @Html.ValidationMessageFor(u => u.senha)
+    </div>
+            <hr />
+    <input type="submit" class="btn btn-primary" value="Logar" />
+
+
+            <div>
+                @Html.ActionLink("Cadastrar Usuario", "Registrar")
+            </div></fieldset>
+</div>
+}

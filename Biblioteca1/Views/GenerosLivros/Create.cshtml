@@ -1,0 +1,61 @@
+﻿@model Biblioteca1.Helpers.ViewModel
+@{
+    ViewBag.Title = "Genero";
+
+
+    
+}
+
+<h2>Adionar Genero a : @Html.DisplayFor(Model => Model.Livro.Titulo)</h2>
+
+@using (Html.BeginForm())
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Genero</td>
+                <td>Adicionar</td>
+                <td>Excluir</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Generos)
+            {
+
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Label)</td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Adicionar" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Excluir" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+                }
+
+            
+            
+        </tbody>
+    </table>
+
+
+  
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index","Livros")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

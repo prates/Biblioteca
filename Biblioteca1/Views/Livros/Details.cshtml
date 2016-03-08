@@ -1,0 +1,81 @@
+﻿@model Biblioteca1.Livro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes sobre o livro</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeDisponivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeDisponivel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar à coleção", "Index")
+</p>
