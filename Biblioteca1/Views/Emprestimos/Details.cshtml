@@ -1,0 +1,74 @@
+﻿@model Biblioteca1.Emprestimo
+
+@{
+    ViewBag.Title = "Emprestimo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ver detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusEmprestimo.Label)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusEmprestimo.Label)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEmprestimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prazo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prazo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Multa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Multa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editat", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
