@@ -26,36 +26,13 @@
             data: JSON.stringify(dados),
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
-                alert("Genero adicionado com sucesso!");
+                alert(data.success);
             },
             error: function () {
-                alert("Errro ao adcionar genero!");
+                alert("error");
             }
         });
     }
-
-    function Excluir(livroId, generoId) {
-        var dados = {
-            livroId: livroId,
-            generoId: generoId
-        };
-
-        console.log(JSON.stringify(dados));
-
-        $.ajax({
-            url: '/GenerosLivros/Delete',
-            type: 'POST',
-            data: JSON.stringify(dados),
-            contentType: 'application/json; charset=utf-8',
-            success: function (data) {
-                alert("Genero excluido com sucesso!");
-            },
-            error: function () {
-                alert("Errro ao excluir genero!");
-            }
-        });
-    }
-
     </script>
 }
 
@@ -82,8 +59,7 @@
                 <td>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="button" value="Adicionar" class="btn btn-primary" onClick="Adicionar('@Html.DisplayFor(Model => Model.Livro.Id)','@Html.DisplayFor(modelItem => item.Id)')" />
-                            <input type="button" value="Excluir" class="btn btn-danger" onClick="Excluir('@Html.DisplayFor(Model => Model.Livro.Id)','@Html.DisplayFor(modelItem => item.Id)')" />
+                            <input type="button" value="Excluir" class="btn btn-danger" onClick="Adicionar('@Html.DisplayFor(Model => Model.Livro.Id)','@Html.DisplayFor(modelItem => item.Id)')" />
                         </div>
                     </div>
                 </td>

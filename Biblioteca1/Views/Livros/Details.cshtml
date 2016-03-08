@@ -1,4 +1,4 @@
-﻿@model Biblioteca1.Livro
+﻿@model Biblioteca1.Helpers.ViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,72 +10,83 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Titulo)
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Titulo)
+            @Html.DisplayFor(model => model.Livro.Titulo)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Autor)
+            @Html.DisplayNameFor(model => model.Livro.Autor)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Autor)
+            @Html.DisplayFor(model => model.Livro.Autor)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ISBN)
+            @Html.DisplayNameFor(model => model.Livro.ISBN)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ISBN)
+            @Html.DisplayFor(model => model.Livro.ISBN)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Editora)
+            @Html.DisplayNameFor(model => model.Livro.Editora)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Editora)
+            @Html.DisplayFor(model => model.Livro.Editora)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ano)
+            @Html.DisplayNameFor(model => model.Livro.Ano)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ano)
+            @Html.DisplayFor(model => model.Livro.Ano)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayNameFor(model => model.Livro.Descricao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Descricao)
+            @Html.DisplayFor(model => model.Livro.Descricao)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantidadeTotal)
+            @Html.DisplayNameFor(model => model.Livro.QuantidadeTotal)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QuantidadeTotal)
+            @Html.DisplayFor(model => model.Livro.QuantidadeTotal)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantidadeDisponivel)
+            @Html.DisplayNameFor(model => model.Livro.QuantidadeDisponivel)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QuantidadeDisponivel)
+            @Html.DisplayFor(model => model.Livro.QuantidadeDisponivel)
         </dd>
+
+        @foreach (var item in Model.Generos)
+            {
+            <dt>
+               Genero Literário
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.Label)
+            </dd>
+        }
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Livro.Id }) |
     @Html.ActionLink("Voltar à coleção", "Index")
 </p>

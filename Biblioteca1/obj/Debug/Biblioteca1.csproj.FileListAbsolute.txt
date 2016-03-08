@@ -54,3 +54,4 @@ c:\users\iara prates\documents\visual studio 2015\Projects\Biblioteca1\Bibliotec
 c:\users\iara prates\documents\visual studio 2015\Projects\Biblioteca1\Biblioteca1\bin\EntityFramework.SqlServer.dll
 c:\users\iara prates\documents\visual studio 2015\Projects\Biblioteca1\Biblioteca1\bin\EntityFramework.xml
 c:\users\iara prates\documents\visual studio 2015\Projects\Biblioteca1\Biblioteca1\bin\EntityFramework.SqlServer.xml
+C:\Users\Iara Prates\Documents\Visual Studio 2015\Projects\Biblioteca1\Biblioteca1\obj\Debug\Biblioteca1.csprojResolveAssemblyReference.cache

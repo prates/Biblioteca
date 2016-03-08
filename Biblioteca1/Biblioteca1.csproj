@@ -252,6 +252,7 @@
     <Content Include="Views\Emprestimos\Details.cshtml" />
     <Content Include="Views\Emprestimos\Edit.cshtml" />
     <Content Include="Views\Emprestimos\Index.cshtml" />
+    <Content Include="Views\GenerosLivros\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

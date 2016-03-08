@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Biblioteca1;
+using Biblioteca1.Helpers;
 
 namespace Biblioteca1.Controllers
 {
@@ -33,7 +34,19 @@ namespace Biblioteca1.Controllers
             {
                 return HttpNotFound();
             }
-            return View(livro);
+            List<GeneroLivro> generoslivros = db.GeneroLivro.Where(g => g.Livro.Id == livro.Id).ToList();
+            List<Genero> generos = new List<Genero>();
+            if (generoslivros.Count > 0)
+            {
+                foreach (GeneroLivro gl in generoslivros)
+                {
+
+                    generos.Add(gl.Genero);
+                }
+            }
+
+            ViewModel viewModel = new ViewModel(livro, generos);
+            return View(viewModel);
         }
 
         // GET: Livros/Create
